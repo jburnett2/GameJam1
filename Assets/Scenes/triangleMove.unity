@@ -103,6 +103,7 @@ GameObject:
   - 114: {fileID: 1066275710}
   - 61: {fileID: 1066275711}
   - 61: {fileID: 1066275712}
+  - 114: {fileID: 1066275713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -213,6 +214,18 @@ BoxCollider2D:
   m_Offset: {x: -0.008761138, y: 0.17521864}
   serializedVersion: 2
   m_Size: {x: 0.24656326, y: 0.26408577}
+--- !u!114 &1066275713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1066275706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a68cb73b9fe4d4c824c9c01344b93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletObj: {fileID: 1000013773946164, guid: b523c128e13bdfb4d9c5518e56251715, type: 2}
 --- !u!1001 &1290944545
 Prefab:
   m_ObjectHideFlags: 0
@@ -251,6 +264,11 @@ Prefab:
     - target: {fileID: 4000013404470318, guid: b523c128e13bdfb4d9c5518e56251715, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013983502276, guid: b523c128e13bdfb4d9c5518e56251715,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b523c128e13bdfb4d9c5518e56251715, type: 2}
