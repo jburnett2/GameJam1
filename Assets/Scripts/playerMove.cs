@@ -4,8 +4,8 @@ using System.Collections;
 public class playerMove : MonoBehaviour {
 
     public float moveSpeed = 6f;
-    private Vector3 mousePos;
-    private Rigidbody2D theRigidBody;
+    public Vector3 mousePos;
+    public Rigidbody2D theRigidBody;
 
     // Use this for initialization
     void Start () {

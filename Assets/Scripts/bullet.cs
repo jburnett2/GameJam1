@@ -3,8 +3,7 @@ using System.Collections;
 
 public class bullet : MonoBehaviour {
 
-    public float bulletSpeed = 20f;
-
+   
     public Rigidbody2D theRigidBody;
 
 	// Use this for initialization
@@ -15,6 +14,8 @@ public class bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+       // theRigidBody.velocity = theRigidBody.velocity * bulletSpeed;
 	}
+
+   
 }
