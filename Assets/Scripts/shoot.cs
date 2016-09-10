@@ -16,7 +16,7 @@ public class shoot : MonoBehaviour {
 	    if (fire)
         {
             GameObject iBullet = (GameObject) Instantiate(bullet, transform.position, Quaternion.identity);
-            iBullet.
+           // iBullet.
         }
 	}
 }
