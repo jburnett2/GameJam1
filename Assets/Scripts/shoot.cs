@@ -29,11 +29,10 @@ public class shoot : MonoBehaviour {
             mPos2 = new Vector2(player.mousePos.x, player.mousePos.y);
             heading = mPos2 - player.theRigidBody.position;
             direction = heading / heading.magnitude;
-            Debug.Log(direction);
+            //Debug.Log(direction);
             GameObject iBullet = (GameObject) Instantiate(bulletObj, transform.position, Quaternion.identity);
             Rigidbody2D rb = iBullet.GetComponent<Rigidbody2D>();
             rb.velocity += direction * bulletSpeed;
-            
         }
 	}
 }

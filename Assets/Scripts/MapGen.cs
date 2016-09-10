@@ -6,26 +6,22 @@ public class MapGen : MonoBehaviour
 
     public float TileSize;
     public Vector2 StartPoint;
-    public int tilechoice = 0;
     public GameObject tile;
 
 
-    static public int width = 50;
-    static public int height = 50;
+    static public int width = 100;
+    static public int height = 100;
     private float chanceAlive = 0.45f;
-    public int birthLim = 4;
-    public int deathLim = 4;
-    public int numofSteps = 2;
+    public int birthLim = 3;
+    public int lowdeathLim = 2;
+    public int highdeathLim = 3;
+    public int numofSteps = 5;
     public bool[,] cellmap = new bool[width, height];
 
     // Use this for initialization
     void Start()
     {
         cellmap = genMap();
-        foreach (var gena in cellmap)
-        {
-            Debug.Log(gena);
-        }
         applyTileMap();
     }
 
@@ -64,7 +60,11 @@ public class MapGen : MonoBehaviour
                 int neighbors = countAliveNeighbors(oldmap, x, y);
                 if (oldmap[x, y])
                 {
-                    if (neighbors < deathLim)
+                    if (neighbors < lowdeathLim)
+                    {
+                        newmap[x, y] = false;
+                    }
+                    else if(neighbors > highdeathLim)
                     {
                         newmap[x, y] = false;
                     }
@@ -75,7 +75,7 @@ public class MapGen : MonoBehaviour
                 }
                 else
                 {
-                    if (neighbors > birthLim)
+                    if (neighbors == birthLim)
                     {
                         newmap[x, y] = true;
                     }
@@ -105,7 +105,7 @@ public class MapGen : MonoBehaviour
                 //map size checking
                 else if (neighbor_x < 0 || neighbor_y < 0 || neighbor_x >= map.GetLength(0) || neighbor_y >= map.GetLength(1))
                 {
-                    count++;
+                   count++;
                 }
                 else if (map[neighbor_x, neighbor_y])
                 {
@@ -144,11 +144,11 @@ public class MapGen : MonoBehaviour
             {
                 if (cellmap[x, y])
                 {
-                    tile = Resources.Load("Prefabs\\wall") as GameObject;
+                    tile = Resources.Load("Prefabs\\Wall") as GameObject;
                 }
                 else
                 {
-                    tile = Resources.Load("Prefabs\\tile_01") as GameObject;
+                    tile = Resources.Load("Prefabs\\Floor") as GameObject;
                 }
 
                 GameObject tileMap = Instantiate(tile, Vector3.zero, Quaternion.identity) as GameObject;

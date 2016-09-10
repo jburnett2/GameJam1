@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TileSize: 0
   StartPoint: {x: 0, y: 0}
-  tilechoice: 0
   tile: {fileID: 0}
-  birthLim: 8
-  deathLim: 3
-  numofSteps: 2
+  birthLim: 3
+  lowdeathLim: 2
+  highdeathLim: 3
+  numofSteps: 5

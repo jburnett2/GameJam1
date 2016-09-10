@@ -14,8 +14,16 @@ public class bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
        // theRigidBody.velocity = theRigidBody.velocity * bulletSpeed;
 	}
 
-   
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
