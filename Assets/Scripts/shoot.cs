@@ -23,7 +23,7 @@ public class shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetButtonDown("Fire1"))
+	    if (Input.GetButton("Fire1"))
         {
             //Debug.Log("fire");
             mPos2 = new Vector2(player.mousePos.x, player.mousePos.y);

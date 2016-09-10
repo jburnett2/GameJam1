@@ -14,9 +14,15 @@ public class bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        StartCoroutine(waitDestroy(5));
        // theRigidBody.velocity = theRigidBody.velocity * bulletSpeed;
 	}
+
+    IEnumerator waitDestroy(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

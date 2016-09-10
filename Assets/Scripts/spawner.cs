@@ -6,6 +6,7 @@ public class spawner : MonoBehaviour {
     private Rigidbody2D theRigidBody;
     private Transform target;                               //Transform to attempt to move toward each turn.
     private bool hasSeenTarget = true;
+    public int numSpawnIn = 0;
     int xDir = 0;
     int yDir = 0;
     int damp = 1;
@@ -47,10 +48,11 @@ public class spawner : MonoBehaviour {
 
             theRigidBody.velocity = new Vector2(xDir * moveSpeed, yDir * moveSpeed);
 
-            if (x >= 10)
+            if (x >= 40 && numSpawnIn<=40)
             {
                 GameObject iEnemy = (GameObject)Instantiate(EnemyObj, transform.position, Quaternion.identity);
                 x = 0;
+                numSpawnIn++;
             }
             else
             { x++; }
